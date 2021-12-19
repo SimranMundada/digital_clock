@@ -1,3 +1,5 @@
+var functioncall=false;
+
 function clock(){
 
 
@@ -10,15 +12,13 @@ function clock(){
 
     var a = time.getHours();
 
-    if(a==0){
-        a=12;
-        
-    }
-    if(a>12){
+   if((a>=0)&&(a<=12))
+    {
+        aam.innerHTML="AM"; 
+    } else
+    {
         a=a-12;
-        var d="PM";
-        aam.innerHTML=d;
-        document.getElementById('am').style.paddingTop="25px";
+        aam.innerHTML="PM";
     }
     
 
@@ -37,11 +37,13 @@ function clock(){
 setInterval(clock,1000);
 
 function makediv(){
+    var functioncall=true;
     var container=document.createElement('div');
     container.id="dynamic-block";
     container.className="grid-item1";
     document.getElementById('grid-container1').appendChild(container);
-
+}
+update(){
     var invalue1=document.getElementById('wakeupTimeSelector');
     var value1=invalue1.options[invalue1.selectedIndex].text;
 
@@ -97,6 +99,9 @@ function settime(){
         document.getElementById("image-container").style.backgroundImage="url(./assets/night.png)";
         document.getElementById("text-container").innerHTML="GOOD NIGHT !!";
     }
+    if(functioncall==false){
     makediv();
+    }
+    update();
 }
 
