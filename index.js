@@ -1,3 +1,5 @@
+var functioncall=false;
+
 function clock(){
 
 
@@ -10,7 +12,15 @@ function clock(){
 
     var a = time.getHours();
 
-    if(a==0){
+    if((a>=0)&&(a<=12))
+    {
+        aam.innerHTML="AM"; 
+    } else
+    {
+        a=a-12;
+        aam.innerHTML="PM";
+    }
+    /*if(a==0){
         a=12;
         
     }
@@ -20,7 +30,7 @@ function clock(){
         aam.innerHTML=d;
         document.getElementById('am').style.paddingTop="25px";
     }
-    
+    */
 
     var b = time.getMinutes();
     var c = time.getSeconds();
@@ -37,10 +47,16 @@ function clock(){
 setInterval(clock,1000);
 
 function makediv(){
+    functioncall=true;
     var container=document.createElement('div');
     container.id="dynamic-block";
     container.className="grid-item1";
+    
+
     document.getElementById('grid-container1').appendChild(container);
+
+}
+function update(){
 
     var invalue1=document.getElementById('wakeupTimeSelector');
     var value1=invalue1.options[invalue1.selectedIndex].text;
@@ -50,6 +66,8 @@ function makediv(){
 
     var invalue3=document.getElementById('wakeupTimeSelector3');
     var value3=invalue3.options[invalue3.selectedIndex].text;
+
+
 
     var tag1 = document.createElement("p");
     var text1 = document.createTextNode(" Wake Up Time : "+ value1);
@@ -63,6 +81,11 @@ function makediv(){
     var text3 = document.createTextNode(" Dinner Time : "+ value1);
     tag3.appendChild(text3);
 
+    let menu = document.getElementById('dynamic-block');
+    while (menu.firstChild) {
+           menu.removeChild(menu.firstChild);
+          }
+
     var temp=document.getElementById('dynamic-block');
     temp.appendChild(tag1);
 
@@ -71,9 +94,7 @@ function makediv(){
     temp.appendChild(tag3);
 
 
-   /* document.getElementById("dynamic-block").innerHTML=" Wake Up Time : "+ value1;
-    document.getElementById("dynamic-block").innerHTML=" Lunch Time : "+ value2;
-    document.getElementById("dynamic-block").innerHTML=" Nap Time : "+ value3;*/
+   
 }
 
 function settime(){
@@ -97,6 +118,10 @@ function settime(){
         document.getElementById("image-container").style.backgroundImage="url(./assets/night.png)";
         document.getElementById("text-container").innerHTML="GOOD NIGHT !!";
     }
-    makediv();
+    if(functioncall==false){
+        makediv();
+    }
+
+    update();
 }
 

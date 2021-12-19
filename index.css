@@ -16,11 +16,12 @@
 
 #grid-container1{
     width: 45%;
-    height: 75vh;
+    /*height: 75vh;*/
+    height: 800px;
     display: grid;
     grid-row-gap: 15px;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: 20% 50% 20% 20%;
+    grid-template-rows: 15% 50% 20% 20%;
 }
 
 #clock-pic{
@@ -162,7 +163,7 @@
 
 #set-time{
     width: 25%;
-    height: 9%;
+    height: 7%;
     font-size: 18px;
     padding:auto;
     border-radius: 5px;
@@ -170,7 +171,7 @@
     background-image: linear-gradient(113deg,#6E54EC,#CB52F8,#FC5EFF,#F1A7C5);
     color: white;
     position: absolute;
-    bottom: 80px;
+    bottom: 180px;
     left: 45px;
     float: inline-end;
 }
@@ -344,4 +345,6 @@
     left: -15px;
     border-radius: 6px;
 }
+
+
 
