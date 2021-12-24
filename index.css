@@ -17,7 +17,7 @@
 #grid-container1{
     width: 45%;
     /*height: 75vh;*/
-    height: 800px;
+    height: 750px;
     display: grid;
     grid-row-gap: 15px;
     grid-template-columns: repeat(2,1fr);
@@ -104,10 +104,10 @@
 }
 .vl {
     border-left: 1px solid #3D087BDE;
-    height: 35px;
+    height: 55px;
     position: relative;
     left: 58px;
-    top:-25px;
+    top:-55px;
     bottom: -20px;
     opacity: 1;
    
@@ -115,10 +115,10 @@
 .vl2{
 
     border-left: 1px solid #3D087BDE;
-    height: 35px;
+    height: 55px;
     position: relative;
     left: 58px;
-    top:-60px;
+    top:-85px;
     bottom: -20px;
     opacity: 1;
 
@@ -142,6 +142,8 @@
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
+    position: relative;
+    top:-20px;
 }
 #div2{
     background-image: url("./assets/lunch_time.png");
@@ -150,6 +152,8 @@
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
+    position: relative;
+    top:-25px;
 }
 #div3{
     background-image: url("./assets/nap_time.png");
@@ -158,6 +162,8 @@
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
+    position: relative;
+    top:-20px;
 
 }
 
