@@ -17,7 +17,7 @@
 #grid-container1{
     width: 45%;
     /*height: 75vh;*/
-    height: 750px;
+    height: 800px;
     display: grid;
     grid-row-gap: 15px;
     grid-template-columns: repeat(2,1fr);

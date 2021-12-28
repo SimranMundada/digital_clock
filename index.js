@@ -66,6 +66,7 @@ function update(){
 
     var invalue3=document.getElementById('wakeupTimeSelector3');
     var value3=invalue3.options[invalue3.selectedIndex].text;
+    
 
 
 
@@ -78,7 +79,7 @@ function update(){
     tag2.appendChild(text2);
 
     var tag3 = document.createElement("p");
-    var text3 = document.createTextNode(" Dinner Time : "+ value1);
+    var text3 = document.createTextNode(" Dinner Time : "+ value3);
     tag3.appendChild(text3);
 
     let menu = document.getElementById('dynamic-block');
